@@ -1,0 +1,115 @@
+<style>
+@font-face {
+    font-family: digital;
+    src: url(DS-DIGII.TTF);
+}
+</style>
+<div id="header"><img src="timemachine.png">
+</div>
+<br>
+<div id="menu"><img id="menuBtn" src="menu.png">
+    <ul>
+        <li id="travel">
+            < TIME traveller>
+        </li>&nbsp;&nbsp;
+    </ul>
+</div>
+<div id="container">
+    <div id="time">
+        <img src="time.png" style="border-radius: 45px">
+        <input type="text" id="screen" max="4" disabled>
+        <div id="btn">
+            <input type="button" id="inputBtn1" value="1">
+            <input type="button" id="inputBtn2" value="2">
+            <input type="button" id="inputBtn3" value="3">
+            <br>
+            <input type="button" id="inputBtn4" value="4">
+            <input type="button" id="inputBtn5" value="5">
+            <input type="button" id="inputBtn6" value="6">
+            <br>
+            <input type="button" id="inputBtn7" value="7">
+            <input type="button" id="inputBtn8" value="8">
+            <input type="button" id="inputBtn9" value="9">
+            <br>
+            <input type="button" id="inputBtnClr" value="<">
+            <input type="button" id="inputBtn0" value="0">
+            <input type="button" id="inputBtnGo" value="GO">
+        </div>
+    </div>
+</div>
+<script>
+
+
+//this code handles all the buttons for the time machine device
+//takes the value of the button and appends that value to the screen div
+$('#inputBtn1').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn2').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn3').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn4').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn5').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn6').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn7').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn8').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn9').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtn0').click(function() {
+    $('#screen').val($('#screen').val() + $(this).val());
+});
+$('#inputBtnClr').click(function() {
+    $('#screen').val('');
+});
+
+$("#screen").attr('maxlength', '4');
+//since I chose 2001 this function checks if the user has input 2001
+//if the user enters a year other than 2001 user will be directed to an 'under construction' page
+//an alert is shown to tell the user where they are going and how many years they are travelling
+
+$('#inputBtnGo').click(function() {
+    year = $('#screen').val();
+    currentYear = 2015;
+    totalYears = Math.abs(currentYear - year);
+
+    if (parseInt(year) == 2001) {
+        alert("You are on your way to the year " + year + "! That's " + totalYears + " years through time! ")
+        $('body').load('2001.html', function() {
+            $.getScript('script.js');
+        })
+    } else {
+        alert("You are on your way to the year " + year + "! That's " + totalYears + " years through time! ")
+        $('body').load('other.html', function() {
+            $.getScript('script.js');
+        });
+    }
+})
+
+//jQuery .load() function loads an html page and the script.js file
+
+$('#home').click(function() {
+    $('body').load('home.html', function() {
+        $.getScript('script.js')
+    })
+})
+
+$('#home').click(function() {
+    $('body').load('about.html', function() {
+        $.getScript('script.js')
+    })
+})
+</script>

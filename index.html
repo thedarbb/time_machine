@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<style>
+#left {
+    position: fixed;
+    height: 84%;
+    width: 9%;
+    top: 6%;
+    left: -5%;
+    background-color: #979500;
+    border-radius: 107px;
+}
+
+#right {
+    position: fixed;
+    height: 84%;
+    width: 9%;
+    top: 6%;
+    left: 95%;
+    background-color: #979500;
+    border-radius: 107px;
+}
+</style>
+
+<body>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="left2"></div>
+    <div id="right2"></div>
+    <div id="header"><img src="timemachine.png">
+    </div>
+    <div id="menu">
+        <p id="headerText">WELCOME TRAVELLER
+        </p><img id="menuBtn" src="menu.png"></div>
+    <br>
+    <div class="center">
+        <ul>
+            <li>
+                <label for="user name">
+                    < USER name>
+                </label>
+                <input type="username" id="userName" placeholder="username" required>
+            </li>
+            <li>
+                <br>
+                <input type="submit" id="login" value="Login">&nbsp;&nbsp;
+                <input type="submit" id="newUser" value="New user">
+            </li>
+        </ul>
+    </div>
+    <div id="footer">
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+    $(".center").hide(0).delay(200).fadeIn(1000)
+});
+//this function checks if the username field is empty
+//if it is, the user will see an alert asking them to provide a username
+//if user enters a valid username, the home.html page gets loaded into the body of index.html
+$("#login").click(function(event) {
+    if ($("#userName").val() == 0) {
+        alert("Please provide a username or click new user to register")
+    } else {
+
+        $("body").load("home.html", function() {
+            var div = $("#container");
+            $.getScript('script.js')
+        })
+    }
+})
+
+//this click function will take a new user to the new user sign up form
+//the login.html page gets loaded along with the script.js file
+$("#newUser").click(function() {
+    $("body").load('login.html', function() {
+        $.getScript('script.js')
+    })
+});
+</script>
+
+</html>

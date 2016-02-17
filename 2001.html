@@ -1,0 +1,167 @@
+<style>
+#container {
+    display: absolute;
+    margin: 0 auto;
+    background-color: #979500;
+    width: 70%;
+    height: 37%;
+    top: 25%;
+    position: absolute;
+    left: 272px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    border-radius: 15%;
+}
+
+.content {
+    border-radius: 5px;
+    position: absolute;
+    left: 124px;
+    top: 123px;
+    background-color: black;
+    height: auto;
+    width: 75%;
+    font-family: BTTF;
+    padding: 40px;
+    margin: auto auto;
+}
+
+#music {
+    position: absolute;
+    top: 74%;
+    left: 15%;
+    background-color: #979500;
+    height: 50%;
+    width: 31%;
+    border: 11px solid black;
+    border-radius: 14%;
+    padding: 15px;
+}
+
+#video {
+    position: absolute;
+    top: 110%;
+    left: 51%;
+    background-color: #979500;
+    height: 72%;
+    width: 31%;
+    border: 11px solid black;
+    border-radius: 14%;
+    padding: 15px;
+}
+
+#ipod {
+    position: absolute;
+    top: 161%;
+    left: 15%;
+    background-color: #979500;
+    height: 106%;
+    width: 32%;
+    border: 11px solid black;
+    border-radius: 14%;
+    padding: 15px;
+}
+
+h2 {
+    position: absolute;
+    left: 40%;
+    font-size: 35px;
+    font-family: BTTF;
+}
+
+#ipod2001 {
+    position: absolute;
+    left: 33%;
+    top: 7%;
+}
+
+#ipodScrn {
+    position: absolute;
+    height: 9%;
+    width: 19%;
+    top: 10%;
+    left: 39%;
+    background-color: black;
+    z-index: 1;
+    border-radius: 6px;
+}
+
+#ipodBtn {
+    position: absolute;
+    height: 40px;
+    width: 41px;
+    top: 25%;
+    left: 45%;
+    border-radius: 100%;
+    background-color: gray;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#play {
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    top: 55%;
+    left: 47%;
+    border: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.on {
+    background-image: url(screen.png);
+}
+
+#earbuds {
+	position: absolute;
+	left: 14%;
+    top: 71%;
+}
+</style>
+<div id="header"><img src="timemachine.png">
+</div>
+<br>
+<div id="menu"><img id="menuBtn" src="menu.png">
+    <ul>
+        <li id="travel">
+            < BACK & future>
+        </li>&nbsp;&nbsp;
+    </ul>
+</div>
+<div id="container">
+    <h1> 2001 </h1>
+    <div class="content">
+        <p style="font-family:BTTF; color:#012C63"> 2001 was a common year starting on monday of the gregorian calendar, the 2001st year of the common era, and anno domini designations, the 1st year of the 3rd millennium, the 1st year of the 21st century, and the 2nd year of the 2000's decade.</p>
+    </div>
+</div>
+<div id="music">
+    <h2> music </h2>
+    <p style="font-family: BTTF; color: black; padding-top: 9%"> Since you're looking to experience music from the year 2001, i felt it would be necessary to show you one of my favorite songs from this year. DEFTONES with DIGITAL BATH. ENJOY.</p>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/9tmPBuSpmfA" frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="video">
+    <h2>NEWS</h2>
+    <p style="font-family: BTTF; color: black; padding-top: 9%;">The September 11 attacks (also referred to as September 11, September 11th, or 9/11)[nb 1] were a series of four coordinated terrorist attacks by the Islamic terrorist group al-Qaeda on the United States on the morning of Tuesday, September 11, 2001. The attacks consisted of suicide attacks used to target symbolic U.S. building landmarks. The hijackers crashed planes into the World Trade Center in New York City, the Pentagon in Arlington County, and a field in Shanksville, after the passengers revolted. The attacks claimed the lives of 2,996 people (including 19 hijackers) and caused at least $10 billion in property and infrastructure damage.</p>
+    <iframe id="news" width="420" height="315" src="https://www.youtube.com/embed/mhROd7Jt3-w" frameborder="0" allowfullscreen></iframe>
+</div>
+<div id='ipod'>
+    <div id="ipodScrn"></div>
+    <input type="button" id="ipodBtn">
+    <h2> ipod </h2>
+    <img id="ipod2001" src="ipod.png">
+    <p style="font-family: BTTF; color:black; padding-top:60%">
+        apple introduced the first generation ipod (M8541) on october 23, 2001, with the slogan "1,000 songs in your pocket". the first ipod had a black and white LCD screen and featured a 5 GB hard drive capable of storing 1,000 songs encoded using MP3 and was priced at 399.99 USD.its easy-to-use navigation, which was controlled using a mechanical scroll wheel, a center select button, and four auxiliary buttons around the wheel. The iPod had a rated battery life of ten hours.<br>
+        <br>
+        WE ALL KNOW TECHNOLOGY IS CHANGING FAST.
+        <BR>
+        WHERE WILL THE IPOD BE IN 50 YEARS? MY GUESS IS IT WILL BE OBSOLETE! IN 50 YEARS TIME, I'M GOING TO MAKE A BOLD STATEMENT AND SAY THAT WE ARE GOING TO HAVE WIRELESS EARBUDS - YES, I KNOW WE HAVE THOSE IN 2015. BUT, THESE EARBUDS ARE GOING TO HAVE ALL THE TECHNOLOGY THAT WOULD BE NEEDED TO BE CONTROLLED BY YOUR MIND. YES! YOUR MIND. </p>
+   	<img id="earbuds" src="earbuds.png">
+</div>
+<script>
+//the click of this button mimics turning on an old iphone 
+$("#ipodBtn").click(function() {
+    $("#ipodScrn").toggleClass("on")
+});
+</script>

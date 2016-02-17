@@ -1,0 +1,84 @@
+<style>
+.center {
+    border-radius: 5px;
+    position: absolute;
+    left: 815px;
+    top: 322px;
+    background-color: #979500;
+    height: 313px;
+    width: 225px;
+    font-family: BTTF;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
+
+#left {
+    position: fixed;
+    height: 84%;
+    width: 9%;
+    top: 6%;
+    left: -5%;
+    background-color: #979500;
+    border-radius: 107px;
+}
+
+#right {
+    position: fixed;
+    height: 84%;
+    width: 9%;
+    top: 6%;
+    left: 95%;
+    background-color: #979500;
+    border-radius: 107px;
+}
+</style>
+<div id="left"></div>
+<div id="right"></div>
+<div id="left2"></div>
+<div id="right2"></div>
+<div id="header"><img src="timemachine.png">
+</div>
+<div id="menu">
+    <p id="headerText">WELCOME TRAVELLER
+        <p><img id="menuBtn" src="menu.png"></div>
+<br>
+<div class="center">
+    <ul>
+        <li>
+            <label for="user name">user name</label>
+            <input id="userName" name="userName" type="text" placeholder="username" required>
+        </li>
+        <li>
+            <label for="address">address</label>
+            <input id="address" type="text" placeholder="address" required>
+        </li>
+        <li>
+            <label for="postal code">postal code</label>
+            <input id="postalCode" type="text" placeholder="postal code" required>
+        </li>
+        <li>
+            <label for="phone">phone number</label>
+            <input id="phoneNumber" type="text" placeholder="phone number" required>
+        </li>
+        <li>
+            <br>
+            <input id="signup" type="submit" onclick="WriteCookie();" value="Sign up">&nbsp;&nbsp;</li>
+    </ul>
+</div>
+<div id="footer">
+
+</div>
+<script>
+$(document).ready(function() {
+    $(".center").hide(0).delay(500).fadeIn(2000)
+});
+
+function WriteCookie()
+{
+  cookievalue= escape($("#userName").val()) + ";";
+  document.cookie="name=" + cookievalue;
+  console.log("Setting Cookies : " + "name=" + cookievalue );
+}
+
+</script>

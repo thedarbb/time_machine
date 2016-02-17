@@ -1,0 +1,25 @@
+<style>
+body {
+    background-image: url(banner.jpg);
+}
+
+#back {
+    position: absolute;
+    left: 20%;
+    top: 19%;
+    width: 25%;
+    height: 6%;
+    font-size: 26px;
+    font-family: BTTF;
+}
+</style>
+<button id="back">
+    < GET ME OUT OF HERE >
+</button>
+<script>
+$('#back').click(function() {
+    $("body").load('travel.html', function() {
+        $.getScript('script.js');
+    })
+})
+</script>
